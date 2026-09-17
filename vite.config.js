@@ -20,9 +20,22 @@ function asyncStyles() {
   };
 }
 
+// Vite rewrites root-absolute hrefs (e.g. /favicon/x.png) to relative ones
+// because base is "./". That breaks favicons on deep 404 URLs, so restore them.
+function absoluteFaviconPaths() {
+  return {
+    name: "absolute-favicon-paths",
+    enforce: "post",
+    apply: "build",
+    transformIndexHtml(html) {
+      return html.replace(/(href=")\.\/(favicon\/)/g, "$1/$2");
+    },
+  };
+}
+
 export default defineConfig({
   base: "./",
-  plugins: [tailwindcss(), asyncStyles()],
+  plugins: [tailwindcss(), asyncStyles(), absoluteFaviconPaths()],
   build: {
     rollupOptions: {
       input: {

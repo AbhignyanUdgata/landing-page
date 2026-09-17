@@ -52,7 +52,8 @@ Because the build output is committed to the repo, run `npm run build` and commi
 │   ├── input.css        # Tailwind entry + @theme design tokens + component styles
 │   └── main.js          # loader, page transitions, menu, reveal, zoom
 ├── public/              # copied as-is: resume.html, resume.pdf, og.png,
-│                        # robots.txt, sitemap.xml, CNAME, .nojekyll
+│   │                    # robots.txt, sitemap.xml, CNAME, .nojekyll
+│   └── favicon/         # favicon.svg, favicon.ico, PNG sizes, site.webmanifest
 ├── dist/                # committed build output (served by Cloudflare Pages)
 ├── design-tokens.json   # color/type token reference
 └── vite.config.js       # multi-page inputs + asyncStyles() plugin
@@ -63,6 +64,25 @@ Because the build output is committed to the repo, run `npm run build` and commi
 `vite.config.js` includes an `asyncStyles()` plugin that rewrites the built stylesheet link into a `preload` → `onload` swap (with a `<noscript>` fallback) so first paint is not blocked. Google Fonts links in each page use the same pattern.
 
 Each page carries a small inline critical-CSS block in `<head>` that paints the loader, page background, and transition cover before any stylesheet loads, preventing a flash of unstyled content on reload. Inline `<style>` is unlayered, so it takes precedence over Tailwind rules in `@layer components` regardless of specificity — keep that in mind when editing.
+
+## Favicons
+
+Brand mark: an ink-black `#1d1d1b` square with an Ember Orange `#c03f13` four-point star.
+
+`public/favicon/` is copied to `/favicon/` on the site:
+
+| File | Purpose |
+| --- | --- |
+| `favicon.svg` | Vector icon (modern browsers) |
+| `favicon.ico` | 16/32/48 multi-resolution, legacy fallback |
+| `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `favicon-96x96.png` | PNG icons |
+| `apple-touch-icon.png` | 180×180 iOS home screen |
+| `android-chrome-192x192.png`, `android-chrome-512x512.png` | Android / PWA |
+| `site.webmanifest` | Web app manifest |
+
+All references are root-absolute (`/favicon/...`) so they resolve correctly on deep 404 URLs. Vite rewrites those to relative paths during build because `base` is `"./"`, so the `absoluteFaviconPaths()` plugin in `vite.config.js` restores them — keep that in mind if you add more root-absolute assets.
+
+To regenerate the rasters, redraw from `favicon.svg` at 16, 32, 48, 96, 180, 192, and 512 px, and rebuild `favicon.ico` with 16/32/48 frames.
 
 ## Notes
 
