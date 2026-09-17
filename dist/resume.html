@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Abhignyan Udgata — Résumé</title>
+<style>
+  :root { --ink:#1d1d1b; --soft:#4b4641; --line:#1d1d1b; --ember:#c03f13; --paper:#f4f1ee; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    background: #cfcac4;
+    font-size: 10.5pt;
+    line-height: 1.42;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .sheet {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    background: var(--paper);
+    padding: 16mm 16mm 14mm;
+  }
+  header { border-bottom: 2px solid var(--line); padding-bottom: 8px; }
+  h1 {
+    font-size: 30pt;
+    line-height: 0.92;
+    letter-spacing: -0.02em;
+    margin: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  .role {
+    margin: 4px 0 6px;
+    font-size: 11pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ember);
+  }
+  .contact { font-size: 9.5pt; color: var(--soft); }
+  .contact a { color: var(--soft); text-decoration: none; }
+  .contact span { margin: 0 6px; color: #9a938c; }
+  section { margin-top: 16px; }
+  h2 {
+    font-size: 10pt;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin: 0 0 8px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--line);
+    font-weight: 700;
+  }
+  p { margin: 0 0 6px; }
+  ul { margin: 0; padding-left: 15px; }
+  li { margin-bottom: 3px; }
+  .item { margin-bottom: 11px; }
+  .item:last-child { margin-bottom: 0; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .item-head strong { font-size: 11.5pt; font-weight: 700; }
+  .item-head .when { font-size: 9pt; color: var(--soft); white-space: nowrap; letter-spacing: 0.04em; }
+  .stack { font-size: 9pt; color: var(--ember); letter-spacing: 0.02em; margin: 1px 0 4px; }
+  .skills .row { display: grid; grid-template-columns: 128px 1fr; gap: 6px; margin-bottom: 5px; }
+  .skills .row b { font-size: 9pt; letter-spacing: 0.08em; text-transform: uppercase; color: var(--soft); font-weight: 700; padding-top: 1px; }
+  .skills .row span { font-size: 10pt; }
+  .avail { margin-top: 16px; border: 1px solid var(--line); padding: 8px 12px; font-size: 10pt; }
+  .avail b { color: var(--ember); letter-spacing: 0.02em; }
+  @page { size: A4; margin: 0; }
+  @media print {
+    body { background: #fff; font-size: 10pt; }
+    .sheet { width: auto; min-height: auto; margin: 0; padding: 14mm 15mm; }
+    a { color: var(--soft); }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <header>
+    <h1>Abhignyan Udgata</h1>
+    <div class="role">AI &amp; Product Builder — CS Undergrad</div>
+    <div class="contact">
+      Balangir, Odisha, India
+      <span>·</span><a href="mailto:abhignyanudgata11@gmail.com">abhignyanudgata11@gmail.com</a>
+      <span>·</span><a href="https://github.com/AbhignyanUdgata">github.com/AbhignyanUdgata</a>
+      <span>·</span><a href="https://linkedin.com/in/abhignyan-udgata-108ba2289">linkedin.com/in/abhignyan-udgata-108ba2289</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>Summary</h2>
+    <p>Second-year Computer Science student who treats every idea as a reason to start building. Ships AI-native web apps and tools end-to-end — front end, backend, and deployment — and learns by breaking things rather than waiting for a syllabus. Looking for a Summer 2026 internship to build real things alongside people who raise the bar.</p>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <strong>Anon Boards — anonymous social platform</strong>
+        <span class="when">React · Supabase · Vercel</span>
+      </div>
+      <div class="stack">React 18, TypeScript, Vite, Tailwind CSS, shadcn/ui, Supabase (Postgres + Edge Functions/Hono)</div>
+      <ul>
+        <li>Built and deployed an account-free message board where visitors post and reply instantly, with automatic anonymous IDs and optional accounts to track history.</li>
+        <li>Shipped 10+ Supabase Edge Functions as the API layer over Postgres, and a likes-ranked Hot feed with topic boards, sorting, and threaded replies.</li>
+        <li>Live at <b>anonboards12.vercel.app</b> · rebuilt from prototype across 20+ commits.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <strong>Crate — playlist → YouTube converter</strong>
+        <span class="when">HTML · JavaScript · Google OAuth</span>
+      </div>
+      <div class="stack">Vanilla JavaScript, Exportify integration, Google OAuth</div>
+      <ul>
+        <li>Built a fully client-side tool that turns a Spotify playlist CSV into clickable YouTube search links for every track, removing manual searching.</li>
+        <li>Added automatic CSV column detection, bulk-open first 10, copy-all, and .txt export; optional Google sign-in saves playlists across visits.</li>
+        <li>Live at <b>crate-inc.vercel.app</b> with zero backend for the core flow.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <strong>Orca Swarm — decentralized multi-agent reasoning</strong>
+        <span class="when">Python · LangGraph · LLMs</span>
+      </div>
+      <div class="stack">Python, LangGraph, LangChain, Streamlit, Anthropic/OpenAI/Gemini/LM Studio</div>
+      <ul>
+        <li>Built a five-agent reasoning pod (Scout, Analyst, Verifier, Challenger, Synthesizer) coordinated through an append-only shared signal stream instead of a fixed chain of thought.</li>
+        <li>Designed content-driven routing and a convergence gate with an adversarial Challenger; wired four swappable LLM providers with per-role model/temperature overrides.</li>
+        <li>Shipped a Streamlit app and CLI over the same compiled graph with a 12-test suite that runs offline against a fake LLM.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="item-head">
+        <strong>B.Tech, Computer Science &amp; Engineering — VIT-AP University</strong>
+        <span class="when">2025 – 2029 (expected)</span>
+      </div>
+      <div class="stack">CGPA 8.40 / 10</div>
+    </div>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <div class="row"><b>Languages</b><span>JavaScript, TypeScript, Python, Java, HTML, CSS, SQL</span></div>
+    <div class="row"><b>Frontend</b><span>React, Tailwind CSS, shadcn/ui, Vite</span></div>
+    <div class="row"><b>Backend &amp; Data</b><span>Supabase, PostgreSQL, Edge Functions (Hono), Node.js, MySQL, Oracle DB</span></div>
+    <div class="row"><b>AI</b><span>LangGraph, LangChain, LLM orchestration, Streamlit</span></div>
+    <div class="row"><b>Tools</b><span>Git, GitHub, Vercel, GitHub Pages, MATLAB</span></div>
+  </section>
+
+  <div class="avail">
+    <b>Available for Summer 2026 internships</b> — open to AI/product engineering roles. Email abhignyanudgata11@gmail.com.
+  </div>
+</div>
+</body>
+</html>

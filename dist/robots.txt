@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abhignyanudgata.dpdns.org/sitemap.xml
