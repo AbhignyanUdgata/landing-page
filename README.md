@@ -67,12 +67,13 @@ Each page carries a small inline critical-CSS block in `<head>` that paints the 
 
 ## Favicons
 
-Brand mark: an ink-black `#1d1d1b` square with an Ember Orange `#c03f13` four-point star.
+Mark: `public/favicon/favicon.svg` — a dark grayscale emblem on near-white corners, drawn from a 1506×1536 source trace. Rasters and the `.ico` are generated from it, so the SVG is the single source of truth.
 
-`public/favicon/` is copied to `/favicon/` on the site:
+`public/favicon/` is copied to `/favicon/` on the site, and `public/favicon.ico` to the domain root:
 
 | File | Purpose |
 | --- | --- |
+| `/favicon.ico` | Root copy, for browsers that auto-request that path |
 | `favicon.svg` | Vector icon (modern browsers) |
 | `favicon.ico` | 16/32/48 multi-resolution, legacy fallback |
 | `favicon-16x16.png`, `favicon-32x32.png`, `favicon-48x48.png`, `favicon-96x96.png` | PNG icons |
@@ -80,9 +81,11 @@ Brand mark: an ink-black `#1d1d1b` square with an Ember Orange `#c03f13` four-po
 | `android-chrome-192x192.png`, `android-chrome-512x512.png` | Android / PWA |
 | `site.webmanifest` | Web app manifest |
 
+Icon URLs carry a `?v=N` query (`v=3` at the time of writing). Favicons are cached hard — by Cloudflare for four hours and by the browser's own favicon store, which a normal reload often will not clear. **Bump the version in all five pages and in `site.webmanifest` whenever the artwork changes**, otherwise visitors keep seeing the old icon.
+
 All references are root-absolute (`/favicon/...`) so they resolve correctly on deep 404 URLs. Vite rewrites those to relative paths during build because `base` is `"./"`, so the `absoluteFaviconPaths()` plugin in `vite.config.js` restores them — keep that in mind if you add more root-absolute assets.
 
-To regenerate the rasters, redraw from `favicon.svg` at 16, 32, 48, 96, 180, 192, and 512 px, and rebuild `favicon.ico` with 16/32/48 frames.
+To regenerate the rasters, render `favicon.svg` at 16, 32, 48, 96, 180, 192, and 512 px and rebuild `favicon.ico` with 16/32/48 frames.
 
 ## Notes
 

@@ -28,7 +28,7 @@ function absoluteFaviconPaths() {
     enforce: "post",
     apply: "build",
     transformIndexHtml(html) {
-      return html.replace(/(href=")\.\/(favicon\/)/g, "$1/$2");
+      return html.replace(/(href=")\.\/(favicon\.ico|favicon\/)/g, "$1/$2");
     },
   };
 }
