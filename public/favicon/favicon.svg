@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg"
-     width="735" height="570" viewBox="0 0 735 570"
-     role="img" aria-label="White geometric logo with four-point sparkle">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 424 386" role="img" aria-label="Website logo">
   <title>Website logo</title>
-  <rect width="100%" height="100%" fill="#000000"/>
-  <g fill="#FFFFFF" fill-rule="evenodd">
-    <path d="M 471 125 L 457 119 L 383 120 L 290 276 L 164 480 L 278 479 L 455 186 L 459 183 L 465 183 L 470 188 L 471 280 L 481 280 L 481 141 L 478 133 Z"/><path d="M 478 314 L 476 326 L 467 347 L 457 361 L 445 373 L 432 382 L 419 388 L 400 393 L 393 393 L 403 394 L 422 400 L 438 409 L 449 418 L 461 432 L 472 452 L 476 464 L 477 477 L 479 463 L 489 439 L 500 424 L 508 416 L 520 407 L 538 398 L 552 394 L 563 393 L 552 392 L 535 387 L 521 380 L 511 373 L 497 359 L 488 346 L 480 327 Z"/>
+  <rect width="424" height="386" fill="#000000"/>
+  <g fill="#ffffff" fill-rule="evenodd">
+    <path d="M 319 18 L 305 12 L 231 13 L 138 169 L 12 373 L 126 372 L 303 79 L 307 76 L 313 76 L 318 81 L 319 173 L 329 173 L 329 34 L 326 26 Z"/><path d="M 326 207 L 324 219 L 315 240 L 305 254 L 293 266 L 280 275 L 267 281 L 248 286 L 241 286 L 251 287 L 270 293 L 286 302 L 297 311 L 309 325 L 320 345 L 324 357 L 325 370 L 327 356 L 337 332 L 348 317 L 356 309 L 368 300 L 386 291 L 400 287 L 411 286 L 400 285 L 383 280 L 369 273 L 359 266 L 345 252 L 336 239 L 328 220 Z"/>
   </g>
 </svg>
